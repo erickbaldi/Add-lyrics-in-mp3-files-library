@@ -13,7 +13,7 @@ from email.mime.multipart import MIMEMultipart
 from mutagen.id3 import ID3, USLT
 
 if len(sys.argv) < 2:
-    print('Uso: python3 prendi_testo_tutti_new.py "/percorso/cartella/musica"')
+    print('Uso: python3 prendi_testo_plain_LRCLIB_e_manda_email.py "/percorso/cartella/musica"')
     sys.exit(1)
 
 cartella_radice = sys.argv[1]
