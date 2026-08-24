@@ -10,10 +10,10 @@ import subprocess
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from mutagen.id3 import ID3, USLT
+from mutagen.id3 import ID3, SYLT
 
 if len(sys.argv) < 2:
-    print('Uso corretto: python3 prendi_testo_plain_LRCLIB_e_manda_email.py "/percorso/cartella/musica"')
+    print('Uso corretto: python3 prendi_testo_synced_LRCLIB_e_manda_email.py "/percorso/cartella/musica"')
     sys.exit(1)
 
 cartella_radice = sys.argv[1]
@@ -68,7 +68,7 @@ def invia_email(successi, gia_presenti, falliti):
     Erick
     """
     
-    messaggio.attach(MIMEText(corpo_testo, 'plain', 'utf-8'))
+    messaggio.attach(MIMEText(corpo_testo, 'synced', 'utf-8'))
     
     try:
         print("\n📧 Invio dell'email di notifica in corso...")
@@ -139,7 +139,7 @@ for radice, directory, files in os.walk(cartella_radice):
                 continue
                 
             # Controllo se il testo è già presente (per non sprecare traffico internet)
-            if tags and "USLT::eng" in tags:
+            if tags and "SYLT::eng" in tags:
                 print(f"⏭️ Il testo è già presente in questo file. Salto.")
                 gia_presenti += 1
                 continue
@@ -165,7 +165,7 @@ for radice, directory, files in os.walk(cartella_radice):
                     dati = json.loads(response.read().decode('utf-8'))
                     
                     if dati and len(dati) > 0:
-                        testo = dati[0].get('plainLyrics')
+                        testo = dati[0].get('syncedLyrics')
                         
                         if testo:
                             # Se l'MP3 non aveva una struttura ID3 valida, la creiamo da zero ora
@@ -173,7 +173,7 @@ for radice, directory, files in os.walk(cartella_radice):
                                 tags = ID3()
                             
                             # Inietta il testo
-                            tags["USLT::eng"] = USLT(encoding=3, lang='eng', desc='', text=testo)
+                            tags["SYLT::eng"] = SYLT(encoding=3, lang='eng', desc='', text=testo)
                             tags.save(file_mp3)
                             print("✅ Testo iniettato con successo!")
                             successi += 1
