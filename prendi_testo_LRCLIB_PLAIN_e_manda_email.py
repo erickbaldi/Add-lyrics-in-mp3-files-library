@@ -51,11 +51,11 @@ def invia_email(successi, gia_presenti, falliti):
     messaggio = MIMEMultipart()
     messaggio['From'] = EMAIL_MITTENTE
     messaggio['To'] = EMAIL_DESTINATARIO
-    messaggio['Subject'] = "Server Linux Peppermint Erick 🎵 Aggiornamento Testi MP3 Completato!"
+    messaggio['Subject'] = "Server Linux Peppermint Erick 🎵 Aggiornamento Testi MP3 PLAIN Completato!"
     
     corpo_testo = f"""
     Ciao,
-    Il processo di scansione e iniezione dei testi MP3 è terminato.
+    Il processo di scansione e iniezione dei testi MP3 in modalità PLAIN è terminato.
     
     Ecco il riepilogo finale:
     ---------------------------------------------------------
