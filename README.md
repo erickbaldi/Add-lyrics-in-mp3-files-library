@@ -6,5 +6,5 @@ The best source (free and available) is [LRCLIB](https://lrclib.net/), but other
 
 In this repository I collect all the Python and Shell scripts I use to manage ID3 tag in MP3 files and their tassonomy.
 
-Lyrics injection into Mp3 files are scheduled in the "crontab" configuration file .cron in this collection.
+Lyrics injections into Mp3 files are scheduled in the "crontab" configuration file .cron in this collection.
 
