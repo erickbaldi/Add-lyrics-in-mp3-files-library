@@ -13,7 +13,7 @@ from email.mime.multipart import MIMEMultipart
 from mutagen.id3 import ID3, SYLT, ID3NoHeaderError
 
 if len(sys.argv) < 2:
-    print('Uso: python3 prendi_testo_tutti_new.py "/percorso/cartella/musica"')
+    print('Uso: python3 prendi_testo_LRCLIB_SYNC_e_manda_email.py "/percorso/cartella/musica"')
     sys.exit(1)
 
 cartella_radice = sys.argv[1]
@@ -74,11 +74,11 @@ def invia_email(successi, gia_presenti, falliti):
     messaggio = MIMEMultipart()
     messaggio['From'] = EMAIL_MITTENTE
     messaggio['To'] = EMAIL_DESTINATARIO
-    messaggio['Subject'] = "Server Linux Peppermint Erick 🎵 Aggiornamento Testi MP3 Completato!"
+    messaggio['Subject'] = "Server Linux Peppermint Erick 🎵 Aggiornamento Testi MP3 SYNC Completato!"
     
     corpo_testo = f"""
     Ciao,
-    Il processo di scansione e iniezione dei testi MP3 è terminato.
+    Il processo di scansione e iniezione dei testi MP3 in modalità SYNC è terminato.
     
     Ecco il riepilogo finale:
     ---------------------------------------------------------
