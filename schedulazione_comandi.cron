@@ -1,9 +1,9 @@
 # tutti i venerdì alle ore 05:00 inserisco testi plain in MUSICA_ERICK1
 0 5 * * 5 /usr/bin/python3 /home/erick/Scaricati/script/prendi_testo_LRCLIB_PLAIN_e_manda_email.py "/media/erick/MUSICA_ERICK1"
-# tutti i venerdì alle ore 15:00 inserisco testi sync in MUSICA_ERICK1
-0 15 * * 5 /usr/bin/python3 /home/erick/Scaricati/script/prendi_testo_LRCLIB_SYNC_e_manda_email.py "/media/erick/MUSICA_ERICK1"
+# tutti i venerdì alle ore 11:00 inserisco testi sync in MUSICA_ERICK1
+0 11 * * 5 /usr/bin/python3 /home/erick/Scaricati/script/prendi_testo_LRCLIB_SYNC_e_manda_email.py "/media/erick/MUSICA_ERICK1"
 
 # tutti i sabati alle ore 05:00 inserisco testi plain e sync in MUSICA_ERICK2
 0 5 * * 6 /usr/bin/python3 /home/erick/Scaricati/script/prendi_testo_LRCLIB_PLAIN_e_manda_email.py "/media/erick/MUSICA_ERICK2"
-#tutti i sabati alle ore 15:00 inserisco testi sync in MUSICA_ERICK2
-0 15 * * 6 /usr/bin/python3 /home/erick/Scaricati/script/prendi_testo_LRCLIB_SYNC_e_manda_email.py "/media/erick/MUSICA_ERICK2"
+#tutti i sabati alle ore 11:00 inserisco testi sync in MUSICA_ERICK2
+0 11 * * 6 /usr/bin/python3 /home/erick/Scaricati/script/prendi_testo_LRCLIB_SYNC_e_manda_email.py "/media/erick/MUSICA_ERICK2"
